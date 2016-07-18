@@ -1,4 +1,36 @@
-h1 {
-color: red;
+body {
+  margin: 1em 10em 1em 10em;
+}
 
+/*h1 {
+color: red;
+}*/
+
+ul li {
+  display: inline-block;
+  margin: 1em;
+  text-align: center;
+}
+
+img {
+  width: 20em;
+}
+
+a[href*="Dog"]{
+color: green;
+}
+
+.sentence {
+  color: blue;
+}
+
+.block {
+  width: 20em;
+  display: inline-block;
+  margin: 1em 3em 1em 3em;
+}
+
+.parcolors {
+  color: darkred;
+  background-color: gray;
 }

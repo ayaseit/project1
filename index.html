@@ -14,30 +14,82 @@
     <li>Menu item4</li>
     <li>Menu item5</li>
   </ul>
-<img src = "http://lorempixel.com/400/200" alt="some random image"/>
-<p>Lorem ipsum dolor sit amet, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
+<div class = "block">
+<img src = "http://lorempixel.com/400/200/nature" alt="some random image"/>
+<p><span class = "sentence">Lorem ipsum dolor sit amet</span>, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
   Oratio appareat gubergren et vim, nam alii noster eu. No mei homero forensibus. <br>Eos in magna recteque corrumpit,
   vis ea reque feugiat accusam. Vel debitis interpretaris ne.
+<a href = "https://en.wikipedia.org/wiki/Dog">Link to Wikipedia</a>
 </p>
+</div>
 
-<img src = "http://lorempixel.com/400/200" alt="some random image"/>
-<p>Lorem ipsum dolor sit amet, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
+<div class = "block">
+<img src = "http://lorempixel.com/400/200/nature"  alt="some random image"/>
+<p><span class = "sentence">Lorem ipsum dolor sit amet</span>, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
   Oratio appareat gubergren et vim, nam alii noster eu. No mei homero forensibus. <br>Eos in magna recteque corrumpit,
   vis ea reque feugiat accusam. Vel debitis interpretaris ne.
 </p>
+</div>
 
-<img src = "http://lorempixel.com/400/200" alt="some random image"/>
-<p>Lorem ipsum dolor sit amet, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
+<div class = "block">
+<img src = "http://lorempixel.com/400/200/nature"  alt="some random image"/>
+<p><span class = "sentence">Lorem ipsum dolor sit amet</span>, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
   Oratio appareat gubergren et vim, nam alii noster eu. No mei homero forensibus. <br>Eos in magna recteque corrumpit,
   vis ea reque feugiat accusam. Vel debitis interpretaris ne.
 </p>
+</div>
 
 <script>
+//====================================================================================================
 var headingEl = document.getElementById("heading");// Step1 - we found the element and stored it in the variable
-console.log(headingEl);
-headingEl.innerHTML = "New heading was set in Javascript";
-//document.body.innerHTML = "I'm on your page!";
+console.log(headingEl);// to check in console, that the element found and is working
+headingEl.innerHTML = "New heading was set in Javascript";//Step2 - Manipulate the DOM node by changing its attributes,
+//styles, innerHTML,or appending new nodes into it.
+headingEl.style.color = "white";
+headingEl.style.backgroundColor = "black";
+headingEl.style.textAlign = "center";
+/*
+var nameEls = document.getElementsByTagName("span"); // Step1 - we found the element and stored it in the variable
+console.log(nameEls[0]); // to checkn in console, that the element found and is working //nameEls[0] - we can pass index, to find the element
+// nameEls.innetHTML = "This sentence used to be 'Lorem ipsum dolor...' "; //Step2 -won't work, because there are several elements stored.
+//We should use loop instead
+for(var i=0; i < nameEls.length; i++){
+  console.log(nameEls[i]);
+  nameEls[i].innerHTML = "This sentence used to be 'Lorem ipsum dolor...' ";
+}
+*/
+//==================================================================================================
+var nameEls = document.getElementsByClassName("sentence"); // Step1 - we found the element and stored it in the variable
+console.log(nameEls[0]); // to checkn in console, that the element found and is working //nameEls[0] - we can pass index, to find the element
+// nameEls.innetHTML = "This sentence used to be 'Lorem ipsum dolor...' "; //Step2 -won't work, because there are several elements stored.
+//We should use loop instead
+for(var i=0; i < nameEls.length; i++){
+  console.log(nameEls[i]);
+  nameEls[i].innerHTML = "This sentence used to be 'Lorem ipsum dolor...' ";
+}
+  nameEls.className = "parcolors";
+//=================================================================================================
 
+//==================================================================================================
+var nameElsCss = document.querySelectorAll("p .sentence");
+console.log(nameElsCss);//returns a NodeList
+for(var i=0; i<nameElsCss.length; i++){
+  nameElsCss[i].innerHTML = "Another change!";
+}
+//===================================================================================================
+var imgEls = document.getElementsByTagName("img");
+console.log(imgEls);
+for(var i=0; i < imgEls.length; i++){
+  console.log(imgEls[i]);
+  imgEls[i].src = "http://lorempixel.com/400/200/sports";
+}
+//==================================================================================================
+var linkEls = document.querySelectorAll("a[href*=\"Dog\"]");
+console.log(linkEls);
+for(var i = 0; i < linkEls.length; i++){
+  linkEls[i].href = "https://en.wikipedia.org/wiki/Cat";
+}
+//document.body.innerHTML = "I'm on your page!"; // access to the body tag, and give to its innerHTML the new value.
 </script>
 </body>
 </html>
