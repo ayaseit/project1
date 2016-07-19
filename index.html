@@ -14,6 +14,9 @@
     <li>Menu item4</li>
     <li>Menu item5</li>
   </ul>
+
+
+
 <div class = "block">
 <img src = "http://lorempixel.com/400/200/nature" alt="some random image"/>
 <p><span class = "sentence">Lorem ipsum dolor sit amet</span>, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
@@ -31,23 +34,31 @@
 </p>
 </div>
 
-<div class = "block">
-<img src = "http://lorempixel.com/400/200/nature"  alt="some random image"/>
-<p><span class = "sentence">Lorem ipsum dolor sit amet</span>, et vix wisi splendide, facer legere et est. Quo errem elaboraret referrentur in.<br>
-  Oratio appareat gubergren et vim, nam alii noster eu. No mei homero forensibus. <br>Eos in magna recteque corrumpit,
-  vis ea reque feugiat accusam. Vel debitis interpretaris ne.
-</p>
-</div>
+
+
+<h2>Boring webpage</h2>
+<button id = "clicker">Boring button</button>
 
 <script>
+var clickerButton = document.getElementById("clicker");
+var onButtonClick = function(){
+  clickerButton.textContent = "Oh wow, you clicked me!";
+};
+clickerButton.addEventListener("click", onButtonClick);
+
+
+
+
+
 //====================================================================================================
 var headingEl = document.getElementById("heading");// Step1 - we found the element and stored it in the variable
 console.log(headingEl);// to check in console, that the element found and is working
 headingEl.innerHTML = "New heading was set in Javascript";//Step2 - Manipulate the DOM node by changing its attributes,
 //styles, innerHTML,or appending new nodes into it.
-headingEl.style.color = "white";
-headingEl.style.backgroundColor = "black";
-headingEl.style.textAlign = "center";
+headingEl.className = "parcolors";
+// headingEl.style.color = "white";
+// headingEl.style.backgroundColor = "black";
+// headingEl.style.textAlign = "center";
 /*
 var nameEls = document.getElementsByTagName("span"); // Step1 - we found the element and stored it in the variable
 console.log(nameEls[0]); // to checkn in console, that the element found and is working //nameEls[0] - we can pass index, to find the element
@@ -66,9 +77,8 @@ console.log(nameEls[0]); // to checkn in console, that the element found and is 
 for(var i=0; i < nameEls.length; i++){
   console.log(nameEls[i]);
   nameEls[i].innerHTML = "This sentence used to be 'Lorem ipsum dolor...' ";
+  nameEls[i].className += " parcolors";
 }
-  nameEls.className = "parcolors";
-//=================================================================================================
 
 //==================================================================================================
 var nameElsCss = document.querySelectorAll("p .sentence");

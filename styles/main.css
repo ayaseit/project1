@@ -2,10 +2,6 @@ body {
   margin: 1em 10em 1em 10em;
 }
 
-/*h1 {
-color: red;
-}*/
-
 ul li {
   display: inline-block;
   margin: 1em;
@@ -33,4 +29,5 @@ color: green;
 .parcolors {
   color: darkred;
   background-color: gray;
+  text-align: center;
 }
